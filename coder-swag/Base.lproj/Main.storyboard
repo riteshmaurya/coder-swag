@@ -11,6 +11,7 @@
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
             <string>Avenir-Book</string>
+            <string>Avenir-Heavy</string>
         </array>
     </customFonts>
     <scenes>
@@ -32,24 +33,37 @@
                                 <rect key="frame" x="0.0" y="69.5" width="375" height="533.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="114" id="AUg-sS-b3I">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CaetgoryCell" rowHeight="114" id="AUg-sS-b3I" customClass="CategoryCell" customModule="coder_swag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AUg-sS-b3I" id="ono-By-AoZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="113.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="digital" translatesAutoresizingMaskIntoConstraints="NO" id="4Dh-Gl-7Lj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="digital" translatesAutoresizingMaskIntoConstraints="NO" id="4Dh-Gl-7Lj">
+                                                    <rect key="frame" x="0.0" y="-8" width="375" height="129"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HODDIES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhb-KL-e00">
+                                                    <rect key="frame" x="119" y="46.5" width="136" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="NFP-AI-THc"/>
+                                                        <constraint firstAttribute="width" constant="136" id="m6f-Wi-5rY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4Dh-Gl-7Lj" firstAttribute="leading" secondItem="ono-By-AoZ" secondAttribute="leading" id="0j2-6s-nzh"/>
-                                                <constraint firstAttribute="trailing" secondItem="4Dh-Gl-7Lj" secondAttribute="trailing" id="AvA-YH-LYA"/>
-                                                <constraint firstItem="4Dh-Gl-7Lj" firstAttribute="top" secondItem="ono-By-AoZ" secondAttribute="top" id="BCW-dJ-DMA"/>
-                                                <constraint firstAttribute="bottom" secondItem="4Dh-Gl-7Lj" secondAttribute="bottom" id="UaM-QH-gVs"/>
+                                                <constraint firstItem="Xhb-KL-e00" firstAttribute="centerX" secondItem="ono-By-AoZ" secondAttribute="centerX" id="uTJ-7X-Waz"/>
+                                                <constraint firstItem="Xhb-KL-e00" firstAttribute="centerY" secondItem="ono-By-AoZ" secondAttribute="centerY" id="uXH-DE-CEj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryImage" destination="4Dh-Gl-7Lj" id="aFY-nq-EO6"/>
+                                            <outlet property="categoryTitle" destination="Xhb-KL-e00" id="hxT-uh-rt6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -66,6 +80,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="CODER SWAG" id="cVp-oF-56t"/>
+                    <connections>
+                        <outlet property="categoryTable" destination="ggK-1z-khi" id="Wk9-p6-AaT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
